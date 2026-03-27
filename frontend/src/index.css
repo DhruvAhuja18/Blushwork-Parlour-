@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Minimal Elegant Pink Palette */
+  --rose-50: #fff0f5;   /* Lavender blush (light background) */
+  --rose-100: #ffe4e1;  /* Misty rose */
+  --rose-200: #ffb6c1;  /* Light pink */
+  --rose-300: #ffc0cb;  /* Pink */
+  --rose-400: #fb8b90;  
+  --rose-500: #f08080;  /* Light coral */
+  --rose-600: #cd5c5c;  /* Indian red */
+  
+  --snow: #fffafa;      /* Snow white background */
+  --white: #ffffff;
+  
+  --text-dark: #2c2929;
+  --text-muted: #6b6666;
+  --text-light: #a29a9a;
+
+  /* Typography */
+  --font-main: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  /* Spacing & Layout */
+  --max-width: 1200px;
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --shadow-sm: 0 2px 4px rgba(240, 128, 128, 0.05);
+  --shadow-md: 0 4px 12px rgba(240, 128, 128, 0.08);
+  --shadow-lg: 0 10px 24px rgba(240, 128, 128, 0.12);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--snow);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--text-dark);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-main);
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Base Utility Classes */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.title-lg {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.title-md {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-family: var(--font-main);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--rose-200);
+  color: var(--text-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background-color: var(--rose-300);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--rose-300);
+  color: var(--text-dark);
+}
+
+.btn-outline:hover {
+  background-color: var(--rose-50);
+}
+
+/* Animations using utility classes (Framer Motion will do most, but generic fades ok too) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--border-radius);
+}
+
+@media (max-width: 768px) {
+  .title-lg {
+    font-size: 2.5rem;
+  }
+  .title-md {
+    font-size: 2rem;
+  }
+  .section {
+    padding: 3rem 0;
+  }
+}
