@@ -43,9 +43,12 @@ app.use((req, res) => {
 // ── Global Error Handler ─────────────────────
 app.use(errorHandler);
 
-// ── Start Server ─────────────────────────────
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => {
-  console.log(`\n🌸 Blushwork Beauty Parlour Server running on http://localhost:${PORT}`);
-  console.log(`📋 API Health: http://localhost:${PORT}/api/health\n`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5001;
+  app.listen(PORT, () => {
+    console.log(`\n🌸 Blushwork Beauty Parlour Server running on http://localhost:${PORT}`);
+    console.log(`📋 API Health: http://localhost:${PORT}/api/health\n`);
+  });
+}
+
+module.exports = app;
