@@ -18,8 +18,8 @@ const servicesData = [
   },
   {
     icon: Heart,
-    title: "Medicure",
-    description: "Complete hand & nail care! Our manicure (medicure) treatments leave your hands soft, bright, and deeply pampered.",
+    title: "Manicure",
+    description: "Complete hand & nail care! Our manicure treatments leave your hands soft, bright, and deeply pampered.",
     price: "From ₹700",
     highlight: false
   },
